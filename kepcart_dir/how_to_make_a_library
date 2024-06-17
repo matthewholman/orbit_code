@@ -1,0 +1,24 @@
+Matthew J. Holman
+12 Januray 2016
+
+Below is what I did to create and use the kepcart c library.
+
+There is also a file called kepcart.py, which provides a c-types wrapper for python access to the routines.
+
+bash-3.2$ gcc -c -Wall -Werror -fpic kepcart.c
+bash-3.2$ gcc -shared -o libkepcart.so kepcart.o
+bash-3.2$ gcc -Wall -o kepcart_test kepcart_test.c -L /Users/mholman/slib_test/ -lkepcart -lm
+bash-3.2$ ./kepcart_test 10
+0 1.000000 0.990000 1.000000 -0.000000 0.100000 0.000000
+1 1.000000 0.990000 1.000000 0.000000 0.100000 0.628319
+2 1.000000 0.990000 1.000000 0.000000 -6.183185 1.256637
+3 1.000000 0.990000 1.000000 -0.000000 -6.183185 1.884956
+4 1.000000 0.990000 1.000000 0.000000 -6.183185 2.513274
+5 1.000000 0.990000 1.000000 0.000000 -6.183185 3.141593
+6 1.000000 0.990000 1.000000 0.000000 0.100000 -2.513274
+7 1.000000 0.990000 1.000000 0.000000 0.100000 -1.884956
+8 1.000000 0.990000 1.000000 0.000000 0.100000 -1.256637
+9 1.000000 0.990000 1.000000 -0.000000 0.100000 -0.628319
+bash-3.2$ pwd
+/Users/mholman/slib_test
+bash-3.2$ 
